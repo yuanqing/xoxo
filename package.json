@@ -18,5 +18,8 @@
   "dependencies": {
     "jockey": "*"
   },
+  "scripts": {
+    "start": "gulp"
+  },
   "private": true
 }
