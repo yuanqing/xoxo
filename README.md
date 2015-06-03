@@ -8,15 +8,17 @@
 - Inline renaming of tracks
 - Persists playlist information in the URL hash; no back-end!
 
-See a [demo](http://goo.gl/5Kgebl).
+See the [demo](http://goo.gl/5Kgebl).
 
 ## Why
 
 This was written mainly as a learning exercise.
 
+Fair warning: *there are no tests!* :beetle:
+
 ## Usage
 
-To build and run the project locally on your machine, do:
+To build and run the app locally, do:
 
 ```
 $ git clone https://github.com/yuanqing/xoxo
