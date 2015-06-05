@@ -72,6 +72,10 @@
       $scope.player = player;
     });
 
+    $scope.$on('youtube.player.paused', function() {
+      PlaylistModel.pause();
+    });
+
     // $scope.$on('youtube.player.playing', function() {
     //   var player = $scope.player;
     //   _resetProgress();
