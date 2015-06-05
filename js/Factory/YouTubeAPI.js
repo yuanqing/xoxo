@@ -14,28 +14,26 @@
     return result;
   };
 
+  var zeroPad = function(n) {
+    n = n ? n + '' : '';
+    return n.length >= 2 ? n : new Array(2 - n.length + 1).join('0') + n;
+  };
+
+  var formatDuration = function(str, delimeter) {
+    var matches = str.match(/^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/).slice(1, 4);
+    var i = -1;
+    var result = [];
+    while (++i < 3) {
+      if (i === 0 && angular.isUndefined(matches[i])) {
+        // skip hours if undefined
+        continue;
+      }
+      result.push(zeroPad(matches[i] || '00')); // minutes and seconds
+    }
+    return result.join(delimeter);
+  };
+
   var YouTubeAPI = function($http) {
-
-    var zeroPad = function(n, width) {
-      n = n ? n + '' : '';
-      return n.length >= width ? n : new Array(width - n.length + 1).join('0') + n;
-    };
-
-    var formatDuration = function(str, delimeter) {
-      var matches = str.match(/^PT(?:(\d+)H)?(?:(\d+)M)?(?:(\d+)S)?$/).slice(1, 4);
-      var i = -1;
-      var result = [];
-      if (angular.isUndefined(matches[2])) {
-        matches[2] = '0';
-      }
-      while (++i < 3) {
-        var match = matches[i];
-        if (!angular.isUndefined(match)) {
-          result.push(zeroPad(match, 2));
-        }
-      }
-      return result.join(delimeter);
-    };
 
     return {
       search: function(query) {
