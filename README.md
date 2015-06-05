@@ -1,4 +1,4 @@
-# [XOXO](http://goo.gl/5Kgebl)
+# [xoxo](http://goo.gl/5Kgebl)
 
 > A mixtape maker thing powered by [AngularJS](https://angularjs.org) and [YouTube](https://youtube.com).
 
