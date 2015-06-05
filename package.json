@@ -16,9 +16,6 @@
     "gulp-sourcemaps": "^1.5.2",
     "gulp-uglify": "^1.2.0"
   },
-  "dependencies": {
-    "jockey": "*"
-  },
   "scripts": {
     "start": "gulp"
   },
