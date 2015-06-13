@@ -1,20 +1,15 @@
-# [xoxo](http://goo.gl/5Kgebl)
+# XOXO
 
-> A mixtape maker thing powered by [AngularJS](https://angularjs.org) and [YouTube](https://youtube.com).
+> A [YouTube](https://youtube.com) mixtape maker thing powered by [AngularJS](https://angularjs.org).
+
+## [Demo](http://goo.gl/ol1jEe)
 
 ## Features
 
+- Repeating and shuffling
 - Drag-and-drop reordering
 - Inline renaming of tracks
-- Persists playlist information in the URL hash; no back-end!
-
-See the [demo](http://goo.gl/5Kgebl).
-
-## Why
-
-This was written mainly as a learning exercise.
-
-Fair warning: *there are no tests!* :beetle:
+- No back-end; persists playlist information in the URL hash
 
 ## Usage
 
@@ -29,6 +24,11 @@ $ npm start
 ```
 
 Then pull up [localhost:8888](http://localhost:8888/).
+
+## TODO
+
+- Write some [tests](https://github.com/angular/protractor) :beetle:
+- The track reordering (using [Sortable](https://github.com/RubaXa/Sortable)) is a bit wonky, maybe try [Dragula](https://github.com/bevacqua/dragula)
 
 ## License
 
