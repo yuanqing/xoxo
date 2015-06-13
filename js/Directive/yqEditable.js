@@ -18,11 +18,7 @@
         }
       });
       element.on('blur', function() {
-        var text = element.text();
         scope.callback(scope.$parent.$index, element.text());
-        setTimeout(function() {
-          element[0].innerHTML = text;
-        }, 0);
       });
     };
 
