@@ -22,7 +22,7 @@
       new Sortable(element[0], {
         handle: scope.handle,
         ghostClass: scope.ghostClass,
-        onUpdate: onUpdate,
+        onUpdate: onUpdate
       });
     };
 

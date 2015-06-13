@@ -1,3 +1,4 @@
+/* globals Base64, RawDeflate */
 (function() {
 
   'use strict';

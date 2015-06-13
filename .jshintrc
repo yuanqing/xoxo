@@ -15,8 +15,6 @@
   "undef": true,
   "unused": true,
   "globals": {
-    "angular": true,
-    "Base64": true,
-    "RawDeflate": true
+    "angular": true
   }
 }

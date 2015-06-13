@@ -1,6 +1,6 @@
 {
   "name": "xoxo",
-  "description": "A mixtape maker thing powered by AngularJS and YouTube.",
+  "description": "A YouTube mixtape maker thing powered by AngularJS.",
   "version": "0.1.0",
   "author": "Lim Yuan Qing",
   "license": "MIT",
@@ -14,7 +14,9 @@
     "gulp-minify-css": "^1.1.5",
     "gulp-sass": "^2.0.1",
     "gulp-sourcemaps": "^1.5.2",
-    "gulp-uglify": "^1.2.0"
+    "gulp-uglify": "^1.2.0",
+    "nopt": "^3.0.2",
+    "open": "0.0.5"
   },
   "scripts": {
     "start": "gulp"

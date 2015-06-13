@@ -1,24 +1,25 @@
 'use strict';
 
-var autoprefixer = require('gulp-autoprefixer');
 var del = require('del');
-var childProcess = require('child_process');
-var concat = require('gulp-concat');
-var ecstatic = require('ecstatic');
 var gulp = require('gulp');
 var http = require('http');
-var jshint = require('gulp-jshint');
-var minifycss = require('gulp-minify-css');
-var rename = require('gulp-rename');
+var nopt = require('nopt');
 var sass = require('gulp-sass');
-var sourcemaps = require('gulp-sourcemaps');
+var openBrowser = require('open');
+var ecstatic = require('ecstatic');
+var concat = require('gulp-concat');
+var jshint = require('gulp-jshint');
+var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
+var minifycss = require('gulp-minify-css');
+var sourcemaps = require('gulp-sourcemaps');
+var autoprefixer = require('gulp-autoprefixer');
 
 var paths = {
   dist: 'dist',
   vendor: [
     'bower_components/angular-youtube-mb/src/angular-youtube-embed.js',
-    'bower_components/jockey/dist/jockey.js',
+    'bower_components/jockey/jockey.js',
     'bower_components/js-deflate/rawdeflate.js',
     'bower_components/js-deflate/rawinflate.js',
     'bower_components/js-base64/base64.js',
@@ -33,6 +34,13 @@ var paths = {
   css: [
     'css/*.scss'
   ]
+};
+
+var knownOpts = {
+  open: Boolean
+};
+var shortHands = {
+  o: '--open'
 };
 
 // DEFAULT
@@ -64,7 +72,10 @@ gulp.task('serve', ['dist'], function() {
     root: '.'
   })).listen(8888);
   watch();
-  childProcess.exec('if test "$USER" = "yuanqing"; then open -a "Firefox" http://localhost:8888/; fi');
+  var opts = nopt(knownOpts, shortHands);
+  if (opts.open) {
+    openBrowser('http://localhost:8888/');
+  }
 });
 
 // JS

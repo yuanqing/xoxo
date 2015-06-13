@@ -4,9 +4,17 @@
 
   var PlaylistCtrl = function($scope, PlaylistModel) {
 
-    // player state
+    // Getters.
+    $scope.get = function() {
+      return PlaylistModel.get();
+    };
+    $scope.getCurrentIndex = function() {
+      return PlaylistModel.getCurrentIndex();
+    };
+
+    // Check the playlist state.
     $scope.isStopped = function() {
-      return PlaylistModel.isStopped();
+      return !PlaylistModel.isPlaying();
     };
     $scope.isPlaying = function() {
       return PlaylistModel.isPlaying();
@@ -21,25 +29,9 @@
       return PlaylistModel.isShuffling();
     };
 
-    // get items in playlist
-    $scope.get = function() {
-      return PlaylistModel.get();
-    };
-    $scope.getCurrentIndex = function() {
-      return PlaylistModel.getCurrentIndex();
-    };
-
-    // change playlist state
+    // Change the playlist state.
     $scope.play = function(index) {
-      if (angular.isUndefined(index)) {
-        if (PlaylistModel.isPlaying()) {
-          PlaylistModel.pause();
-        } else {
-          PlaylistModel.play();
-        }
-      } else {
-        PlaylistModel.play(index);
-      }
+      PlaylistModel.play(index);
     };
     $scope.previous = function() {
       PlaylistModel.previous();
@@ -54,7 +46,7 @@
       PlaylistModel.shuffle();
     };
 
-    // change playlist model
+    // Change the playlist model.
     $scope.remove = function(index) {
       PlaylistModel.remove(index);
     };

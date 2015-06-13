@@ -1,21 +1,21 @@
+/* globals jockey */
+
 (function() {
 
   'use strict';
 
-  var jockey = require('jockey');
-
   var PlaylistModel = function($rootScope, Hash) {
 
     var items = Hash.get();
-    var cbs = {
-      onModelChange: function(items) {
+    var opts = {
+      modelChange: function(_, items) {
         Hash.set(items);
       },
-      onStateChange: function(state, currentItem) {
+      stateChange: function(state, currentItem) {
         $rootScope.$broadcast(state, currentItem);
       }
     };
-    return jockey(items, cbs);
+    return jockey(items, opts);
 
   };
 

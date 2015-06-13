@@ -3,6 +3,7 @@
   'use strict';
 
   var TITLE = 'XOXO';
+  var PLAY = '\u25B6';
 
   var MainCtrl = function($scope, PlaylistModel) {
 
@@ -11,7 +12,7 @@
 
     $scope.title = function() {
       if (PlaylistModel.isPlaying()) {
-        return '\u25B6 ' + TITLE;
+        return PLAY + ' ' + PlaylistModel.getCurrent().title;
       }
       return TITLE;
     };
@@ -23,7 +24,6 @@
     $scope.toggleSearch = function() {
       $scope.isSearchOpen = !$scope.isSearchOpen;
     };
-
     $scope.toggleVideo = function() {
       $scope.isVideoVisible = !$scope.isVideoVisible;
     };

@@ -122,13 +122,11 @@ a {text-decoration: none; color: inherit; }
 .search-results-item-duration {opacity: .5; font-size: 10px; }
 
 // .player
-.player-iframe {position: fixed; z-index: -1; top: 4px; right: 0; bottom: 0; width: 33%; height: 100%; }
+.player-iframe {position: fixed; z-index: -1; top: 0; right: 0; bottom: 0; width: 33%; height: 100%; }
 .player-iframe iframe {width: 0; height: 0; }
 .player-iframe--visible {z-index: 6; background: $black; }
 .player-iframe--visible iframe {width: 100%; height: 100%; }
 .player-iframe--stopped iframe {width: 0; height: 0; }
-.player-progress {position: fixed; z-index: 10; top: 0; left: 0; width: 100%; height: 4px; background: $black; }
-.player-progress-elapsed {width: 0; height: 100%; background: $white; }
 
 // .controls
 .controls {width: $w02 * 10; padding: $h04 0; @extend %u-clear; }
