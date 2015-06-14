@@ -25,11 +25,6 @@ $ npm start
 
 Then pull up [localhost:8888](http://localhost:8888/).
 
-## TODO
-
-- Write some [tests](https://github.com/angular/protractor) :beetle:
-- Track reordering (using [Sortable](https://github.com/RubaXa/Sortable)) seems a bit wonky, maybe try [Dragula](https://github.com/bevacqua/dragula)
-
 ## License
 
 [MIT](LICENSE)
