@@ -1,7 +1,7 @@
 {
   "name": "xoxo",
   "description": "A YouTube mixtape maker thing powered by AngularJS.",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "author": "Lim Yuan Qing",
   "license": "MIT",
   "devDependencies": {
