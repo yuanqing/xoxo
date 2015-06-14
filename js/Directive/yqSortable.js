@@ -3,21 +3,29 @@
 
   'use strict';
 
+  var slice = [].slice;
+
   var yqSortable = function() {
 
     var scope = {
       callback: '=yqSortable',
       handle: '@yqSortableHandle',
-      ghostClass: '@yqSortableGhostClass',
+      sortedClass: '@yqSortableSortedClass',
+      ghostClass: '@yqSortableGhostClass'
     };
 
     var link = function(scope, element) {
       var onUpdate = function(e) {
-        var items = Array.prototype.slice.call(element.children());
+        var items = slice.call(element.children());
         var movedItem = e.item;
         var oldIndex = angular.element(movedItem).scope().$index;
         var newIndex = items.indexOf(movedItem);
         scope.callback(oldIndex, newIndex);
+        element.addClass(scope.sortedClass);
+        document.addEventListener('mousemove', function mousemove() {
+          element.removeClass(scope.sortedClass);
+          document.removeEventListener('mousemove', mousemove);
+        });
       };
       new Sortable(element[0], {
         handle: scope.handle,

@@ -158,16 +158,19 @@ a {text-decoration: none; color: inherit; }
 .playlist-list-item--ghost {background: $darker-gray; }
 .playlist-list-item-link {position: absolute; z-index: 1; top: 0; right: 0; bottom: 0; left: 0; @extend %u-pseudo; @extend %border-top; }
 .playlist-list-item--playing,
-.playlist-list-item--playing:hover {background: $darkest-gray; }
+.playlist-list-item--playing:hover {background: $darkest-gray !important; }
 .playlist-list-item-remove,
-.playlist-list-item-handle {position: relative; z-index: 2; top: 0; left: 0; display: block; float: left; opacity: .5; width: $w02; height: 100%; }
-.playlist-list-item-remove {width: $w02; }
-.playlist-list-item-handle {cursor: grab; }
+.playlist-list-item-handle {position: relative; z-index: 2; top: 0; left: 0; display: block; float: left; opacity: 0; width: $w02; height: 100%; }
+.playlist-list-item-remove {background-position: 50% -294px; @extend %sprite; }
+.playlist-list-item-handle {cursor: grab; background-position: 50% -336px; @extend %sprite; }
 .playlist-list-item[draggable="true"] .playlist-list-item-handle {cursor: grabbing; }
-.playlist-list-item:hover .playlist-list-item-remove {background-position: 50% -294px; @extend %sprite; }
-.playlist-list-item:hover .playlist-list-item-handle {background-position: 50% -336px; @extend %sprite; }
+.playlist-list-item:hover .playlist-list-item-remove,
+.playlist-list-item:hover .playlist-list-item-handle {opacity: .5; }
 .playlist-list-item:hover .playlist-list-item-remove:hover,
 .playlist-list-item:hover .playlist-list-item-handle:hover {opacity: 1; }
+.playlist-list--sorted .playlist-list-item:hover {background: none; }
+.playlist-list--sorted .playlist-list-item:hover .playlist-list-item-remove,
+.playlist-list--sorted .playlist-list-item:hover .playlist-list-item-handle {opacity: 0; }
 
 .playlist-list-item-title,
 .playlist-list-item-duration {position: relative; z-index: 2; float: left; height: 15px; line-height: 15px; }

@@ -40,7 +40,7 @@
             <div class="controls-btn controls-btn-video" ng-class="{ 'controls-btn--active': isVideoVisible }" ng-click="toggleVideo()"><div class="controls-btn__inner"></div></div>
           </div>
           <div class="playlist-list">
-            <ul yq-sortable="sortableCallback" yq-sortable-handle=".playlist-list-item-handle" yq-sortable-ghost-class="playlist-list-item--ghost">
+            <ul yq-sortable="sortableCallback" yq-sortable-handle=".playlist-list-item-handle" yq-sortable-ghost-class="playlist-list-item--ghost" yq-sortable-sorted-class="playlist-list--sorted">
               <li class="playlist-list-item" ng-repeat="item in get() track by $index" ng-class="{ 'playlist-list-item--playing': getCurrentIndex() === $index }">
                 <div class="playlist-list-item-remove" ng-click="remove($index)"></div>
                 <div class="playlist-list-item-handle"></div>
