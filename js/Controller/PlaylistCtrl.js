@@ -2,7 +2,7 @@
 
   'use strict';
 
-  var PlaylistCtrl = function($scope, PlaylistModel) {
+  var PlaylistCtrl = function($scope, $timeout, PlaylistModel) {
 
     // Getters.
     $scope.get = function() {
@@ -47,21 +47,21 @@
     };
 
     // Change the playlist model.
+    var setAutosize = function() {
+      // For adjusting the text input widths.
+      $scope.$evalAsync(function() {
+        $scope.$broadcast('setAutosize');
+      });
+    };
     $scope.remove = function(index) {
       PlaylistModel.remove(index);
+      setAutosize();
     };
     $scope.sortableCallback = function(oldIndex, newIndex) {
       PlaylistModel.reorder(oldIndex, newIndex);
+      setAutosize();
     };
-    $scope.editableCallback = function(index, newTitle) {
-      var item = PlaylistModel.get(index);
-      item.title = newTitle;
-      PlaylistModel.set(index, item);
-    };
-
-
     $scope.set = function(index, newTitle) {
-      console.log('set', index, newTitle);
       var item = PlaylistModel.get(index);
       item.title = newTitle;
       PlaylistModel.set(index, item);
@@ -69,6 +69,6 @@
 
   };
 
-  angular.module('app').controller('PlaylistCtrl', ['$scope', 'PlaylistModel', PlaylistCtrl]);
+  angular.module('app').controller('PlaylistCtrl', ['$scope', '$timeout', 'PlaylistModel', PlaylistCtrl]);
 
 })();

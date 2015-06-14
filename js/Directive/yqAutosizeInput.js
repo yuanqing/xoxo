@@ -6,13 +6,20 @@
   var ENTER = 13;
   var ESCAPE = 27;
 
-  var yqAutosizeInput = function() {
+  var yqAutosizeInput = function($timeout) {
 
     var link = function(scope, element) {
 
-      setTimeout(function() {
-        autosizeInput(element[0]);
-      }, 0);
+      var set;
+      $timeout(function() {
+        set = autosizeInput(element[0]);
+      });
+
+      scope.$on('setAutosize', function() {
+        $timeout(function() {
+          set();
+        });
+      });
 
       element.on('keyup', function(e) {
         if (e.keyCode === ENTER || e.keyCode === ESCAPE) {
@@ -29,6 +36,6 @@
 
   };
 
-  angular.module('app').directive('yqAutosizeInput', [yqAutosizeInput]);
+  angular.module('app').directive('yqAutosizeInput', ['$timeout', yqAutosizeInput]);
 
 })();
