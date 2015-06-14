@@ -12,7 +12,7 @@
     "jockey": "yuanqing/jockey~0.2.0",
     "js-base64": "~2.1.5",
     "js-deflate": "dankogai/js-deflate",
-    "Sortable": "RubaXa/Sortable#~0.5.2",
+    "Sortable": "RubaXa/Sortable#~0.5.2"
   },
   "private": true
 }
