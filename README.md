@@ -2,7 +2,7 @@
 
 > A [YouTube](https://youtube.com) mixtape maker thing powered by [AngularJS](https://angularjs.org).
 
-## [Demo](http://goo.gl/ol1jEe)
+## [Demo](http://goo.gl/sswJGT)
 
 ## Features
 
@@ -28,7 +28,7 @@ Then pull up [localhost:8888](http://localhost:8888/).
 ## TODO
 
 - Write some [tests](https://github.com/angular/protractor) :beetle:
-- The track reordering (using [Sortable](https://github.com/RubaXa/Sortable)) is a bit wonky, maybe try [Dragula](https://github.com/bevacqua/dragula)
+- Track reordering (using [Sortable](https://github.com/RubaXa/Sortable)) seems a bit wonky, maybe try [Dragula](https://github.com/bevacqua/dragula)
 
 ## License
 
