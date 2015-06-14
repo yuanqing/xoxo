@@ -19,6 +19,7 @@ var paths = {
   dist: 'dist',
   vendor: [
     'bower_components/angular-youtube-mb/src/angular-youtube-embed.js',
+    'bower_components/autosize-input/autosize-input.js',
     'bower_components/jockey/jockey.js',
     'bower_components/js-deflate/rawdeflate.js',
     'bower_components/js-deflate/rawinflate.js',

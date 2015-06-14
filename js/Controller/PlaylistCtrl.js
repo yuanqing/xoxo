@@ -59,6 +59,14 @@
       PlaylistModel.set(index, item);
     };
 
+
+    $scope.set = function(index, newTitle) {
+      console.log('set', index, newTitle);
+      var item = PlaylistModel.get(index);
+      item.title = newTitle;
+      PlaylistModel.set(index, item);
+    };
+
   };
 
   angular.module('app').controller('PlaylistCtrl', ['$scope', 'PlaylistModel', PlaylistCtrl]);

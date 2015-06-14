@@ -45,7 +45,7 @@
                 <div class="playlist-list-item-remove" ng-click="remove($index)"></div>
                 <div class="playlist-list-item-handle"></div>
                 <div class="playlist-list-item-duration">{{ item.duration }}</div>
-                <div class="playlist-list-item-title" ng-model="item.title" contenteditable yq-editable="editableCallback" spellcheck="false">{{ item.title }}</div>
+                <input type="text" class="playlist-list-item-title" spellcheck="false" ng-model="item.title" ng-blur="set($index, item.title)" yq-autosize-input>
                 <a href="//youtube.com/watch?v={{ item.id }}" class="playlist-list-item-link" ng-click="$event.preventDefault(); play($index)"></a>
               </li>
             </ul>
