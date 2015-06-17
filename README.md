@@ -1,8 +1,10 @@
 # XOXO
 
-> A [YouTube](https://youtube.com) mixtape maker thing powered by [AngularJS](https://angularjs.org).
+> A [YouTube](https://youtube.com) mixtape maker thing.
 
 ## [Demo](http://goo.gl/sswJGT)
+
+![](img/xoxo.png)
 
 ## Features
 
