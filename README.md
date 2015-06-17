@@ -4,8 +4,6 @@
 
 ## [Demo](http://goo.gl/ogVvs2)
 
-[![XOXO](xoxo.png)](http://goo.gl/ogVvs2)
-
 ## Features
 
 - Repeating and shuffling
