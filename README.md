@@ -2,9 +2,9 @@
 
 > A [YouTube](https://youtube.com) mixtape maker thing.
 
-## [Demo](http://goo.gl/sswJGT)
+## [Demo](http://goo.gl/ogVvs2)
 
-[![XOXO](img/xoxo.png)](http://goo.gl/sswJGT)
+[![XOXO](img/xoxo.png)](http://goo.gl/ogVvs2)
 
 ## Features
 
