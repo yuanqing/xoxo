@@ -175,5 +175,9 @@ a {text-decoration: none; color: inherit; }
 .playlist-list-item-title,
 .playlist-list-item-duration {position: relative; z-index: 2; float: left; height: 15px; line-height: 15px; }
 .playlist-list-item-duration {pointer-events: none; opacity: .5; margin: 17px 0 0 16px; font-size: 10px; line-height: 10px; text-shadow: 0 1px 0 $black; }
-.playlist-list-item-title {cursor: text; box-sizing: border-box; margin: 13px 0 0 12px; padding: 2px 4px 0; font-size: 12px; line-height: 14px; }
+.playlist-list-item-title {cursor: text; box-sizing: border-box; margin: 12px 0 0 12px; padding: 2px 4px 0; font-size: 12px; line-height: 14px; }
 .playlist-list-item-title:focus {outline: 0; color: $black; background: $white; }
+
+@-moz-document url-prefix() {
+  .playlist-list-item-title {margin-top: 13px; }
+}
