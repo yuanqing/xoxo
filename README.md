@@ -4,7 +4,7 @@
 
 ## [Demo](http://goo.gl/ogVvs2)
 
-[![XOXO](img/xoxo.png)](http://goo.gl/ogVvs2)
+[![XOXO](xoxo.png)](http://goo.gl/ogVvs2)
 
 ## Features
 
