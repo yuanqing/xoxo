@@ -11,7 +11,8 @@ var concat = require('gulp-concat');
 var jshint = require('gulp-jshint');
 var rename = require('gulp-rename');
 var uglify = require('gulp-uglify');
-var minifycss = require('gulp-minify-css');
+var htmlmin = require('gulp-htmlmin');
+var minifyCss = require('gulp-minify-css');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 
@@ -26,6 +27,7 @@ var paths = {
     'bower_components/js-base64/base64.js',
     'bower_components/Sortable/Sortable.js'
   ],
+  html: 'html/index.html',
   js: [
     'js/app.js',
     'js/Factory/*.js',
@@ -34,14 +36,7 @@ var paths = {
   ],
   css: [
     'css/*.scss'
-  ]
-};
-
-var knownOpts = {
-  open: Boolean
-};
-var shortHands = {
-  o: '--open'
+  ],
 };
 
 // DEFAULT
@@ -50,7 +45,7 @@ gulp.task('default', ['serve']);
 
 // DIST
 
-gulp.task('dist', ['js', 'css']);
+gulp.task('dist', ['js', 'css', 'html']);
 
 // CLEAN
 
@@ -61,12 +56,20 @@ gulp.task('clean', function(cb) {
 // WATCH
 
 var watch = function() {
+  gulp.watch(paths.html, ['html']);
   gulp.watch(paths.js, ['js']);
   gulp.watch(paths.css, ['css']);
 };
 gulp.task('watch', ['dist'], watch);
 
 // SERVE
+
+var knownOpts = {
+  open: Boolean
+};
+var shortHands = {
+  o: '--open'
+};
 
 gulp.task('serve', ['dist'], function() {
   http.createServer(ecstatic({
@@ -77,6 +80,14 @@ gulp.task('serve', ['dist'], function() {
   if (opts.open) {
     openBrowser('http://localhost:8888/');
   }
+});
+
+// HTML
+
+gulp.task('html', function() {
+  return gulp.src(paths.html)
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest('./'));
 });
 
 // JS
@@ -108,6 +119,6 @@ gulp.task('css', function () {
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.dist))
     .pipe(rename({ suffix: '.min' }))
-    .pipe(minifycss())
+    .pipe(minifyCss())
     .pipe(gulp.dest(paths.dist));
 });
