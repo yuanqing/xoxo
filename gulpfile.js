@@ -86,7 +86,10 @@ gulp.task('serve', ['dist'], function() {
 
 gulp.task('html', function() {
   return gulp.src(paths.html)
-    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(htmlmin({
+      collapseWhitespace: true,
+      minifyJS: true
+    }))
     .pipe(gulp.dest('./'));
 });
 

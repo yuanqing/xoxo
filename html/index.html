@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html ng-app="app" ng-controller="MainCtrl" ng-cloak>
 <head>
+  <script>
+    var q = window.location.search;
+    if (q) {
+      var h = q.substring(3); // ?s=...
+      window.location.href = window.location.protocol + '//' + window.location.host + window.location.pathname + '#' + h;
+    }
+  </script>
   <title ng-bind="title()">XOXO</title>
   <meta charset="utf-8">
   <meta name="robots" content="all">
