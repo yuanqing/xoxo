@@ -15,11 +15,10 @@
 
 To build and run the app locally, do:
 
-```
+```sh
 $ git clone https://github.com/yuanqing/xoxo
 $ cd xoxo
-$ npm i
-$ bower i
+$ npm install
 $ npm start
 ```
 
@@ -27,4 +26,4 @@ Then pull up [localhost:8888](http://localhost:8888/).
 
 ## License
 
-[MIT](LICENSE)
+[MIT](LICENSE.md)
