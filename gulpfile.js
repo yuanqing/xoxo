@@ -50,7 +50,7 @@ gulp.task('dist', ['js', 'css', 'html']);
 // CLEAN
 
 gulp.task('clean', function(cb) {
-  del(paths.dist, cb);
+  return del(paths.dist);
 });
 
 // WATCH
