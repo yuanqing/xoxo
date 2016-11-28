@@ -19,13 +19,13 @@ var autoprefixer = require('gulp-autoprefixer');
 var paths = {
   dist: 'dist',
   vendor: [
-    'bower_components/angular-youtube-mb/src/angular-youtube-embed.js',
-    'bower_components/autosize-input/autosize-input.js',
-    'bower_components/jockey/jockey.js',
-    'bower_components/js-deflate/rawdeflate.js',
-    'bower_components/js-deflate/rawinflate.js',
-    'bower_components/js-base64/base64.js',
-    'bower_components/Sortable/Sortable.js'
+    'node_modules/angular-youtube-embed/src/angular-youtube-embed.js',
+    'node_modules/autosize-input/autosize-input.js',
+    'node_modules/jockey/jockey.js',
+    'node_modules/js-base64/base64.js',
+    'node_modules/sortablejs/Sortable.js',
+    'vendor/js-deflate/rawdeflate.js',
+    'vendor/js-deflate/rawinflate.js'
   ],
   html: 'html/index.html',
   js: [
@@ -103,7 +103,7 @@ gulp.task('jshint', function() {
 gulp.task('js', ['jshint'], function() {
   return gulp.src(paths.vendor.concat(paths.js))
     .pipe(sourcemaps.init())
-    .pipe(concat('script.js'))
+    .pipe(concat('script.js', {newLine: ';'}))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(paths.dist))
     .pipe(rename({ suffix: '.min' }))
