@@ -1,7 +1,7 @@
 {
   "name": "xoxo",
   "description": "A YouTube mixtape maker thing.",
-  "version": "0.3.0",
+  "version": "1.0.0",
   "author": "Lim Yuan Qing",
   "license": "MIT",
   "dependencies": {
